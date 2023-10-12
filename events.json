@@ -1,0 +1,35 @@
+[
+    {
+        "Category":"Exhibition",
+        "eventTitle": "Poster presentation Ehibition",
+        "eventDescription": "Researchers will be presenting posters from their research output for the general public.",
+        "eventDate": "2024-01-15",
+        "eventTime": "09:00",
+        "eventVenue": "Venue 1"
+    },
+    {
+        "Category":"Public lecture",
+        "eventTitle": "Public lecture on Biosafety:GMOs",
+        "eventDescription": "To provide raise public knowledge of the Biosafety Act, 2006, and its regulations. The Biosafety Act, 2006, and its regulations awareness is crucial to ensure effective implementation. Namibia's status in terms Biosafety law adminstration, implementation and enforcement. NCRST's role in Biosafety act, 2006 implementation. The Namibian Biosafety Council. GMO application process and the National GMO Laboratory. Benefits and Drawbacks of Biotechnology (GMOs). The Namibia Biosafety Clearing- House. Challenges in Biosafety implementation. .",
+        "eventDate": "2024-02-20",
+        "eventTime": "14:30",
+        "eventVenue": "Venue 2"
+    },
+    {
+        "Category":"Science press",
+        "eventTitle": "Bioprocessing Show",
+        "eventDescription":"Researchers will be presenting posters from their research output for the general public.",
+        "eventDate": "2024-02-20",
+        "eventTime": "14:30",
+        "eventVenue": "Venue 2"
+    },
+    {
+        "Category":"Debate",
+        "eventTitle": "NUST STAR SHOW YOUR TALENT Hackthorn",
+        "eventDescription":"Researchers will be presenting posters from their research output for the general public.",
+        "eventDate": "2024-02-20",
+        "eventTime": "14:30",
+        "eventVenue": "Venue 2"
+    }   
+    
+]

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NCRST SCIENCE FAIR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #FFD700; /* Yellow theme color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Align buttons to the right */
+            align-items: center; /* Vertically center buttons */
+        }
+
+        .tab-menu {
+            background-color: #666;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .tab-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab-menu a:hover {
+            background-color: #555;
+        }
+
+        .event-list {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .event {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .event h2 {
+            margin-top: 0;
+        }
+
+        /* Style for the sign-up and login buttons */
+        .header-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .header-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for the form */
+        .event-form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .event-form label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .event-form input[type="text"],
+        .event-form textarea,
+        .event-form input[type="date"],
+        .event-form input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .event-form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .event-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>NCRST SCIENCE FAIR</h1>
+        <p>Celebrating science in style!</p>
+        <br>
+        <div class="header-buttons">
+            <button id="signUpButton">Sign Up</button>
+            <br>
+            
+            <button id="loginButton">Login</button>
+        </div>
+    </header>
+
+    <div class="tab-menu">
+        <a href="#all">All</a>
+        <a href="#lectures">Public Lectures</a>
+        <a href="#competitions">Competitions</a>
+        <a href="#press">Innovation Press</a>
+        <a href="#shows">Science Shows</a>
+        <a href="#workshops">Workshops & Talk Shops</a>
+        <a href="#festival">Film Festival</a>
+        <a href="#formalevents">Formal Events</a>
+    </div>
+     <!-- Event creation form -->
+     <div class="event-details">
+        <img class="event-image" src="P_lecture.png" alt="ncst logo">
+        <h2 class="event-title">Public Lecture</h2>
+        <p class="event-date">Date: November 07, 2023</p>
+        <p class="event-attendance">Number of People Attending: 100</p>
+        <p>Description:Lecture to be delivered by Prof Kelly Chibbale, Professor of Organic Chemistry, University of cape Ton</p>
+
+        <!-- Button to add event to calendar -->
+        <a class="add-to-calendar-button" href="#">Add Event to Calendar</a>
+        <br>
+        <a class="add-to-calendar-button" href="#"id="showLoading">Book event</a>
+        <div id="loadingModal" class="modal">
+            <div class="modal-content">
+                <div class="loader"></div>
+                
+            </div>
+        </div>
+    </div>
+
+<br>
+
+    <div class="event-details">
+        <img class="event-image" src="Exi.png" alt="ncst logo">
+        <h2 class="event-title">EXHIBITIONS</h2>
+        <p class="event-date">Date: November 08, 2023</p>
+        <p class="event-attendance">Number of People Attending: 110</p>
+        <p>Description:Researchers will be presenting posters from their research output for the general public.</p>
+
+        <!-- Button to add event to calendar -->
+        <a class="add-to-calendar-button" href="#">Add Event to Calendar</a>
+        <br>
+        <a class="add-to-calendar-button" href="#"id="showLoading">Book event</a>
+        <div id="loadingModal" class="modal">
+            <div class="modal-content">
+                <div class="loader"></div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

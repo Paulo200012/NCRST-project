@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-form {
+            padding: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .radio-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .radio-input {
+            margin-right: 10px;
+        }
+
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hide the Event Creator fields by default */
+        .participant-fields {
+            display: none;
+        }
+        .event-creator-fields {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>User Registration</h1>
+    </header>
+
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo" style="height: 80px;width: 200px;">
+        <form class="registration-form" action="process_registration.php" method="post" enctype="multipart/form-data">
+            <label for="user-type" class="radio-label">Select User Type:</label>
+            <input type="radio" id="participant" name="user-type" value="participant" class="radio-input" required>
+            <label for="participant">Participant</label>
+            <input type="radio" id="event-creator" name="user-type" value="event-creator" class="radio-input" required>
+            <label for="event-creator">Event Creator</label>
+
+            <!-- Participant Fields -->
+            <div class="participant-fields">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+
+                <label for="email-participant">Email:</label>
+                <input type="email" id="email-participant" name="email-participant" required>
+
+                <label for="contact-participant">Contact Details:</label>
+                <input type="text" id="contact-participant" name="contact-participant" required>
+            </div>
+
+            <!-- Event Creator Fields -->
+            <div class="event-creator-fields">
+                <label for="name-creator">Name:</label>
+                <input type="text" id="name-creator" name="name-creator" required>
+
+                <label for="contact-creator">Contact Details:</label>
+                <input type="text" id="contact-creator" name="contact-creator" required>
+
+                <label for="logo-creator">Institution Logo:</label>
+                <input type="file" id="logo-creator" name="logo-creator" accept="image/*" required>
+
+                <label for="email-creator">Email Address:</label>
+                <input type="email" id="email-creator" name="email-creator" required>
+            </div>
+           
+        
+            <button class="submit-button" type="submit" onclick="handleSubmit()">Register</button>
+        </form>
+    </div>
+
+    <script>
+        // Get references to the user type radio buttons and relevant field containers
+        const participantRadio = document.getElementById("participant");
+        const eventCreatorRadio = document.getElementById("event-creator");
+        const participantFields = document.querySelector(".participant-fields");
+        const eventCreatorFields = document.querySelector(".event-creator-fields");
+
+        // Add event listeners to show/hide fields based on user type selection
+        participantRadio.addEventListener("change", () => {
+            if (participantRadio.checked) {
+                participantFields.style.display = "block";
+                eventCreatorFields.style.display = "none";
+            }
+        });
+
+        eventCreatorRadio.addEventListener("change", () => {
+            if (eventCreatorRadio.checked) {
+                participantFields.style.display = "none";
+                eventCreatorFields.style.display = "block";
+            }
+        });
+    </script>
+   
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+    
+            // Get the selected user type
+            const userType = document.querySelector('input[name="user-type"]:checked').value;
+    
+            // Create a user data object
+            const userData = {
+                userType,
+            };
+    
+            // Add the user's first name, last name, email, and contact details, depending on the selected user type
+            if (userType === "participant") {
+                userData.firstName = document.getElementById("first-name").value;
+                userData.lastName = document.getElementById("last-name").value;
+                userData.email = document.getElementById("email-participant").value;
+                userData.contactDetails = document.getElementById("contact-participant").value;
+            } else if (userType === "event-creator") {
+                userData.name = document.getElementById("name-creator").value;
+                userData.contactDetails = document.getElementById("contact-creator").value;
+                userData.email = document.getElementById("email-creator").value;
+            }
+    
+            
+           
+    
+            // Create a link to download the JSON file
+            const downloadLink = document.createElement("a");
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = "users.json";
+    
+            // Trigger a click event on the link to initiate the download
+            downloadLink.click();
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to the user type radio buttons and the form
+            const participantRadio = document.getElementById("participant");
+            const eventCreatorRadio = document.getElementById("event-creator");
+            const registrationForm = document.getElementById("registrationForm");
+    
+            // Add event listeners to show/hide fields based on user type selection
+            participantRadio.addEventListener("change", () => {
+                document.querySelector(".participant-fields").style.display = participantRadio.checked ? "block" : "none";
+                document.querySelector(".event-creator-fields").style.display = !participantRadio.checked ? "block" : "none";
+            });
+    
+            eventCreatorRadio.addEventListener("change", () => {
+                document.querySelector(".participant-fields").style.display = !eventCreatorRadio.checked ? "block" : "none";
+                document.querySelector(".event-creator-fields").style.display = eventCreatorRadio.checked ? "block" : "none";
+            });
+    
+            // Add form submit event listener to handle form submission
+            registrationForm.addEventListener("submit", handleSubmit);
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Event Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .event-details {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .event-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .event-date {
+            margin-top: 10px;
+        }
+
+        .event-attendance {
+            margin-top: 10px;
+        }
+
+        .add-to-calendar-button {
+            display: block;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .add-to-calendar-button:hover {
+            background-color: #0056b3;
+    
+        }
+        /* Styles for the loading indicator modal and overlay */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it appears above other content */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff; /* Loading spinner colors */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite; /* Rotate the spinner */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Event Description</h1>
+    </header>
+
+    <div class="event-details">
+        <img class="event-image" src="event_image.jpg" alt="Event Image">
+        <h2 class="event-title">Event Title</h2>
+        <p class="event-date">Date: January 15, 2024</p>
+        <p class="event-attendance">Number of People Attending: 100</p>
+        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget purus ut ipsum rhoncus pharetra.</p>
+
+        <!-- Button to add event to calendar -->
+        <a class="add-to-calendar-button" href="#">Add Event to Calendar</a>
+        <br>
+        <a class="add-to-calendar-button" href="#"id="showLoading">Book event</a>
+        <div id="loadingModal" class="modal">
+            <div class="modal-content">
+                <div class="loader"></div>
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

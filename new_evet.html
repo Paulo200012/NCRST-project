@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #FFD700; /* Yellow theme color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Align buttons to the right */
+            align-items: center; /* Vertically center buttons */
+        }
+
+        .tab-menu {
+            background-color: #666;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .tab-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab-menu a:hover {
+            background-color: #555;
+        }
+
+        .event-list {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .event {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .event h2 {
+            margin-top: 0;
+        }
+
+        /* Style for the sign-up and login buttons */
+        .header-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .header-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for the form */
+        .event-form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .event-form label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .event-form input[type="text"],
+        .event-form textarea,
+        .event-form input[type="date"],
+        .event-form input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .event-form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .event-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="your-logo.png" alt="Logo" class="logo">
+        <h1>Welcome to our Events</h1>
+        <p>Discover exciting events happening near you.</p>
+        <div class="header-buttons">
+            <button id="signUpButton">Sign Up</button>
+            <button id="loginButton">Login</button>
+        </div>
+    </header>
+
+    <div class="tab-menu">
+        <a href="#all">All</a>
+        <a href="#lectures">Public Lectures</a>
+        <a href="#competitions">Competitions</a>
+        <a href="#press">Innovation Press</a>
+        <a href="#shows">Science Shows</a>
+        <a href="#workshops">Workshops & Talk Shops</a>
+        <a href="#festival">Film Festival</a>
+        <a href="#formalevents">Formal Events</a>
+    </div>
+
+
+    <!-- Event creation form -->
+    <div class="event-form">
+        <h2>Create a New Event</h2>
+        <form action="process_event.php" method="POST">
+            <label for="eventTitle">Event Title:</label>
+            <input type="text" id="eventTitle" name="eventTitle" required><br>
+
+            <label for="eventDescription">Description:</label><br>
+            <textarea id="eventDescription" name="eventDescription" rows="4" cols="50" required></textarea><br>
+
+            <label for="eventDate">Date:</label>
+            <input type="date" id="eventDate" name="eventDate" required><br>
+
+            <label for="eventTime">Time:</label>
+            <input type="time" id="eventTime" name="eventTime" required><br>
+
+            <label for="eventVenue">Venue:</label>
+            <input type="text" id="eventVenue" name="eventVenue" required><br>
+
+            <input type="submit" value="Create Event">
+        </form>
+    </div>
+
+</body>
+</html>

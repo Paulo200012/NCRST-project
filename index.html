@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Event Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .event-list {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .event {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .event h2 {
+            margin-top: 0;
+        }
+
+        .calendar {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Adjust the calendar iframe size as needed */
+        iframe {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to our Events</h1>
+        <p>Discover exciting events happening near you.</p>
+    </header>
+
+    <div class="tab-menu">
+        <a href="#all">All</a>
+        <a href="#lectures">Public Lectures</a>
+        <a href="#competitions">Competitions</a>
+        <a href="#press">Innovation Press</a>
+        <a href="#shows">Science Shows</a>
+        <a href="#workshops">Workshops & Talk Shops</a>
+        <a href="#festival">Film Festival</a>
+        <a href="#formalevents">Formal Events</a>
+    </div>
+
+    <div class="event-list">
+        <div class="event">
+            <h2>Event 1</h2>
+            <p>Date: January 15, 2024</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <div class="event">
+            <h2>Event 2</h2>
+            <p>Date: February 20, 2024</p>
+            <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <!-- Repeat this structure for the remaining events -->
+    </div>
+
+    <div class="calendar">
+        <!-- Replace the URL with the embed code for your calendar -->
+        <iframe src="https://calendar.google.com/" frameborder="0" scrolling="no"></iframe>
+    </div>
+</body>
+</html>
